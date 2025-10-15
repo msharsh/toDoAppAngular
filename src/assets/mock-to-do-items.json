@@ -1,0 +1,6 @@
+[
+  { "id": 1, "description": "Test1", "category": { "name": "Errands" }, "completed": false },
+  { "id": 2, "description": "Test2", "category": { "name": "Life" }, "completed": true },
+  { "id": 3, "description": "Test3", "category": { "name": "Academic" }, "completed": false },
+  { "id": 4, "description": "Test4", "completed": false }
+]

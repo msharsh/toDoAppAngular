@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center align-items-center gap-3 mt-3">
+  <button class="btn btn-outline-primary btn-sm"
+          (click)="prevPage()"
+          [disabled]="currentPage === 1">
+    Previous
+  </button>
+
+  <span class="fw-semibold">{{ currentPage }} / {{ totalPages }}</span>
+
+  <button class="btn btn-outline-primary btn-sm"
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages">
+    Next
+  </button>
+</div>

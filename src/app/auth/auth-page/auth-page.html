@@ -1,0 +1,9 @@
+@if (showLogin) {
+    <app-login (showRegister)="showLogin=false">
+
+    </app-login>
+} @else {
+    <app-register (showLogin)="showLogin=true">
+        
+    </app-register>
+}

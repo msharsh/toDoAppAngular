@@ -1,0 +1,34 @@
+<div class="container my-4">
+    <app-nav-bar></app-nav-bar>
+
+    <div class="card shadow-sm mt-4 p-3">
+        <app-search-to-do-item
+            [categories]="categories"
+            (searchTextChange)="searchText = $event; loadItems()"
+            (searchCategoryChange)="searchCategories = $event; loadItems()"
+        ></app-search-to-do-item>
+    </div>
+
+    <div class="card shadow-sm mt-3 p-3">
+        <app-add-to-do-item
+            [categories]="categories"
+            (itemAdded)="onItemAdded($event)"
+        ></app-add-to-do-item>
+    </div>
+
+    <div class="card shadow-sm mt-3 p-3">
+        <app-to-do-item-list
+            [items]="items"
+            [categories]="categories"
+            (itemEdited)="onItemEdited($event)"
+            (itemRemoved)="onItemRemoved($event)"
+        ></app-to-do-item-list>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        <app-list-pagination
+            [totalPages]="totalPages"
+            (currentPageChange)="currentPage = $event; loadItems()"
+        ></app-list-pagination>
+    </div>
+</div>

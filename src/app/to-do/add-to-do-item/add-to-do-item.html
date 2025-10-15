@@ -1,0 +1,21 @@
+<div class="d-flex flex-wrap align-items-center gap-2">
+    <input
+        type="text"
+        class="form-control flex-grow-1"
+        placeholder="New task..."
+        [(ngModel)]="newItem.description"
+    />
+
+    <select
+        class="form-select w-auto"
+        [(ngModel)]="newItem.category"
+        [compareWith]="compareCategories"
+    >
+        <option [ngValue]="undefined">No category</option>
+        @for (c of categories; track $index) {
+            <option [ngValue]="c">{{ c.name }}</option>
+        }
+    </select>
+
+    <button class="btn btn-success" (click)="addToDoItem()">Add Task</button>
+</div>
